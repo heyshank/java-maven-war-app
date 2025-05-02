@@ -36,7 +36,7 @@
     </repository>
   </repositories>
 
-    <distributionManagement>
+  <distributionManagement>
     <snapshotRepository>
       <id>java-maven-war-app-snapshot</id>
       <url>http://13.203.198.74:8081/repository/java-maven-war-app-snapshot/</url>
