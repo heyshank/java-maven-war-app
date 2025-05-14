@@ -10,7 +10,7 @@
       <password>admin</password>
     </server>
     <server>
-      <id>java-maven-war-app-releases</id>
+      <id>java-maven-war-app-release</id>
       <username>admin</username>
       <password>admin</password>
     </server>
