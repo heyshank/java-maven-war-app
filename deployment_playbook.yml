@@ -7,8 +7,8 @@
     repository_type: java-maven-war-app-release
     group_id: com%2Fmycompany%2Fapp
     artifact_id: hello-world-war
-    version: 2.5.0
-    build_number: "{{build_number}}"
+    version: 3.0.1
+    build_number: 34
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
