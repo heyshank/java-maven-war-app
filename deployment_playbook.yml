@@ -3,12 +3,12 @@
   hosts: all
   become: true
   vars:
-    nexus_url: http://3.109.108.111:8081
+    nexus_url: http://3.109.108.111:8081/repository
     repository_type: java-maven-war-app-release
     group_id: com%2Fmycompany%2Fapp
     artifact_id: hello-world-war
     version: 3.0.1
-    build_number: 34
+    build_number: "{{build_number}}"
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
