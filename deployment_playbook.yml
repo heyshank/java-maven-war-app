@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars:
-    nexus_url: http://13.126.210.139:8081/repository
+    nexus_url: http://3.109.108.111:8081/repository
     repository_type: java-maven-war-app-release
     group_id: com%2Fmycompany%2Fapp
     artifact_id: hello-world-war
@@ -13,7 +13,7 @@
   - name: Download file from a file path
     ansible.builtin.get_url:
       url: "{{nexus_url}}/{{repository_type}}/{{group_id}}%2F{{artifact_id}}%2F{{version}}-{{build_number}}%2F{{artifact_id}}-{{version}}-{{ build_number}}.war"
-      dest: /home/ec2-user
+      dest: /home/ec2-user/
       username: admin
       password: admin
 
@@ -21,7 +21,7 @@
     ansible.builtin.shell: mv /home/ec2-user/{{group_id}}%2F{{artifact_id}}%2F{{version}}-{{build_number}}%2F{{artifact_id}}-{{version}}-{{ build_number}}.war /home/ec2-user/firstapp.war
 
   - name: Deploying artifact in webapps
-    ansible.builtin.shell: cp /home/ec2-user/firstapp.war /bin/apache-tomcat-9.0.105/webapps/firstapp.war
+    ansible.builtin.shell: cp /home/ec2-user/firstapp.war /opt/apache-tomcat-9.0.105/webapps/firstapp.war
 
   - name: Remove the artifact
     ansible.builtin.shell: rm -rf /home/ec2-user/firstapp.war
